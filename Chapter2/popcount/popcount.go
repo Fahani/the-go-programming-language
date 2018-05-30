@@ -1,4 +1,4 @@
-package popcount
+package main
 
 import "fmt"
 
@@ -22,7 +22,7 @@ func PopCount(x uint64) int {
 		pc[byte(x>>(7*8))])
 }
 
-// PopCountEx23 returns the population count (number of set bits) of x.
+// PopCountEx23 returns the population count (number of set bits) of x. Using a for
 func PopCountEx23(x uint64) int {
 	var numBits int = 0
 	for i:=uint64(0); i < 8; i++ {
@@ -31,6 +31,17 @@ func PopCountEx23(x uint64) int {
 	return numBits
 }
 
+// PopCountEx24 returns the population count (number of set bits) of x. shifting its the parameter x 64 times
+func PopCountEx24(x uint64) int {
+	var numBits = 0
+
+	for i:=uint64(0); i < 64; i++ {
+		numBits += int(x&1)
+		x = x>>1
+	}
+	return numBits
+}
+
 func main() {
-	fmt.Printf("%v",PopCount(18446744073709551615))
+	fmt.Printf("%v",PopCountEx24(18446744073709551615))
 }

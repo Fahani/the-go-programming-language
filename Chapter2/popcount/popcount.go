@@ -1,4 +1,4 @@
-package main
+package popcount
 
 import "fmt"
 
@@ -42,6 +42,17 @@ func PopCountEx24(x uint64) int {
 	return numBits
 }
 
+// PopCountEx25 returns the population count (number of set bits) of x. Using the expression x&(x-1)
+func PopCountEx25(x uint64) int {
+	var numBits = 0
+
+	for x !=0 {
+		x = x&(x-1)
+		numBits ++
+	}
+	return numBits
+}
+
 func main() {
-	fmt.Printf("%v",PopCountEx24(18446744073709551615))
+	fmt.Printf("%v",PopCountEx25(18446744073709551615))
 }

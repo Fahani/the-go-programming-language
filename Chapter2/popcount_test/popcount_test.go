@@ -22,3 +22,9 @@ func BenchmarkPopCountEx24(b *testing.B){
 		popcount.PopCountEx24(18446744073709551615)
 	}
 }
+
+func BenchmarkPopCountEx25(b *testing.B){
+	for i := 0; i < b.N; i++ {
+		popcount.PopCountEx25(18446744073709551615)
+	}
+}

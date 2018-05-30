@@ -7,6 +7,12 @@ import (
 
 func BenchmarkPopCount(b *testing.B){
 	for i := 0; i < b.N; i++ {
-		popcount.PopCount(uint64(b.N))
+		popcount.PopCount(18446744073709551615)
+	}
+}
+
+func BenchmarkPopCountEx23(b *testing.B){
+	for i := 0; i < b.N; i++ {
+		popcount.PopCountEx23(18446744073709551615)
 	}
 }

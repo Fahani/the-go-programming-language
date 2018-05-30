@@ -22,6 +22,15 @@ func PopCount(x uint64) int {
 		pc[byte(x>>(7*8))])
 }
 
+// PopCountEx23 returns the population count (number of set bits) of x.
+func PopCountEx23(x uint64) int {
+	var numBits int = 0
+	for i:=uint64(0); i < 8; i++ {
+		numBits += int(pc[byte(x>>(0*8))])
+	}
+	return numBits
+}
+
 func main() {
 	fmt.Printf("%v",PopCount(18446744073709551615))
 }

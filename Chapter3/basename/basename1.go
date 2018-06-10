@@ -3,7 +3,7 @@ package main
 
 import "fmt"
 
-func basename(s string) string {
+func basename1(s string) string {
 	for i := len(s)-1; i >= 0; i-- {
 		if s[i] == '/' {
 			s = s[i+1:]
@@ -20,5 +20,5 @@ func basename(s string) string {
 }
 
 func main() {
-	fmt.Println(basename("/aasd7/7777/a.c.go"))
+	fmt.Println(basename1("asd/go"))
 }

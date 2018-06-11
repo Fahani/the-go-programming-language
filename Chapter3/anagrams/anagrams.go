@@ -12,10 +12,10 @@ func areAnagram(a, b string) bool {
 	}
 
 	for _, rA := range runesA {
-		lenB = len(runesB)
 		for i, rB := range runesB {
 			 if rA == rB {
 			 	runesB = append(runesB[:i],runesB[i+1:]...)
+			 	lenB = len(runesB)
 			 	break
 			 }
 

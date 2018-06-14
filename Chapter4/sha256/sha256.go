@@ -1,5 +1,5 @@
 // This example prints and compares the SHA256 digests of "x" and "X"
-package main
+package sha256
 
 import (
 	"crypto/sha256"

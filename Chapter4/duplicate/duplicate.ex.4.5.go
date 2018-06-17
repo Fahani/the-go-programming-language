@@ -10,12 +10,13 @@ func removeAdDu(a []string)[]string {
 		if a[i] == a[i+1] {
 			copy(a[i:],a[i+1:])
 			lenA--
+			i-- // stay in the same place to see of the next adjacent is the same
 		}
 	}
-	return a[:len(a)+1-i]
+	return a[:lenA]
 }
 
 func main(){
-	s := []string{"a","b", "b", "c", "c", "d"}
+	s := []string{"b","b"}
 	fmt.Println(removeAdDu(s))
 }
